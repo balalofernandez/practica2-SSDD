@@ -1,10 +1,16 @@
 package practica2.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class ProductoFitosanitario {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long idProductoFitosanitario;
 	private String nombre;
 	private String URL;
 	

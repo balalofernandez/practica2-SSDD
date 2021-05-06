@@ -3,10 +3,17 @@ package practica2.entities;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Especie {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long idEspecie;
+	
 	private String nombreVulgar;
 	private String nombreCientifico;
 	private List<Plaga> listaPlagas;
