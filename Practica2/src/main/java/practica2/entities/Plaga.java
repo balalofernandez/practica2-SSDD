@@ -19,6 +19,8 @@ public class Plaga {
 	private String URL;
 	@ManyToMany
 	private List<SustanciaActiva> sustanciasActivas;
+	@ManyToMany
+	private List<Especie> listaEspecies;
 
 
 	public String getNombreVulgar() {

@@ -18,6 +18,8 @@ public class SustanciaActiva {
 	private String nombre;
 	@ManyToMany	
 	private List<ProductoFitosanitario> productosFitosanitarios;
+	@ManyToMany
+	private List<Plaga> listaPlagas;
 	
 	public String getNombre() {
 		return nombre;

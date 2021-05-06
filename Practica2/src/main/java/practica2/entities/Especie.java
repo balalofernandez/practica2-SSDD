@@ -19,6 +19,8 @@ public class Especie {
 	private String nombreCientifico;
 	@ManyToMany
 	private List<Plaga> listaPlagas;
+	@ManyToMany
+	private List<CategoriaDeCultivo> listaCategorias;
 	
 	public String getNombreVulgar() {
 		return nombreVulgar;
