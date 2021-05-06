@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManytoMany;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class SustanciaActiva {
@@ -16,7 +16,7 @@ public class SustanciaActiva {
 	private long idSustanciaActiva;
 	
 	private String nombre;
-	@ManytoMany	
+	@ManyToMany	
 	private List<ProductoFitosanitario> productosFitosanitarios;
 	
 	public String getNombre() {

@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManytoMany;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Plaga {
@@ -17,7 +17,7 @@ public class Plaga {
 	private String nombreVulgar;
 	private String nombreCientifico;
 	private String URL;
-	@ManytoMany
+	@ManyToMany
 	private List<SustanciaActiva> sustanciasActivas;
 
 
