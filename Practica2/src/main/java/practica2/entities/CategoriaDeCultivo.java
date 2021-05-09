@@ -18,9 +18,17 @@ public class CategoriaDeCultivo {
 	private long idcultivo;
 	
 	private String nombre;
+	
+	
 	@ManyToMany
 	private List<Especie> listaEspecies;
 	
+	public long getIdcultivo() {
+		return idcultivo;
+	}
+	public void setIdcultivo(long idcultivo) {
+		this.idcultivo = idcultivo;
+	}
 	
 	public String getNombre() {
 		return nombre;
