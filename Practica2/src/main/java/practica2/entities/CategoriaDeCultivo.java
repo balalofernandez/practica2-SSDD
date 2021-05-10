@@ -43,6 +43,10 @@ public class CategoriaDeCultivo {
 		this.listaEspecies = listaEspecies;
 	}
 	
-	
+	public void updateCultivo(CategoriaDeCultivo cultivo) {
+		
+		this.nombre = cultivo.getNombre();
+		this.listaEspecies = cultivo.getListaEspecies();
+	}
 
 }
