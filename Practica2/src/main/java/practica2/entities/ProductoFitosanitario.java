@@ -19,6 +19,18 @@ public class ProductoFitosanitario {
 	@ManyToMany
 	private List<SustanciaActiva> listaSustanciasActivas;
 	
+	public long getIdProductoFitosanitario() {
+		return idProductoFitosanitario;
+	}
+	public void setIdProductoFitosanitario(long idProductoFitosanitario) {
+		this.idProductoFitosanitario = idProductoFitosanitario;
+	}
+	public List<SustanciaActiva> getListaSustanciasActivas() {
+		return listaSustanciasActivas;
+	}
+	public void setListaSustanciasActivas(List<SustanciaActiva> listaSustanciasActivas) {
+		this.listaSustanciasActivas = listaSustanciasActivas;
+	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -30,6 +42,11 @@ public class ProductoFitosanitario {
 	}
 	public void setURL(String uRL) {
 		URL = uRL;
+	}
+	public void updateProductoFitosanitario(ProductoFitosanitario prod) {
+		this.nombre = prod.getNombre();
+		this.URL = prod.getURL();
+		this.listaSustanciasActivas = prod.getListaSustanciasActivas();
 	}
 
 }

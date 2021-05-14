@@ -32,7 +32,7 @@ public class EspecieRestController {
 	
 
 	@RequestMapping(value = "/especies", method = RequestMethod.POST)
-	public ResponseEntity<Boolean> addCultivo(@RequestBody Especies especie) {
+	public ResponseEntity<Boolean> addCultivo(@RequestBody Especie especie) {
 		this.especiesRep.save(especie);
 		return new ResponseEntity<Boolean>(true,HttpStatus.CREATED);
 	}
@@ -40,7 +40,7 @@ public class EspecieRestController {
 	@RequestMapping(value = "/especies/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Boolean> modifyPelicula(@PathVariable("id") long id,@RequestBody Especie especie) {
 		Especie esp = especiesRep.getOne(id);
-		esp.updateEspecie(especie);
+		esp.modifyEspecie(especie);
 		especiesRep.save(esp);
 		return new ResponseEntity<Boolean>(true,HttpStatus.OK);
 	}
