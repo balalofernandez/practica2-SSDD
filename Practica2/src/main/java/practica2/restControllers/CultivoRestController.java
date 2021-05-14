@@ -11,36 +11,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import practica2.services.CultivoService;
 import practica2.entities.*;
+import practica2.repository.CategoriaDeCultivoRepository;
 
 @RestController
 public class CultivoRestController {
 
-		@Autowired
-		private CultivoService cultivoService;
+	@Autowired
+	private CategoriaDeCultivoRepository cultivosRep;
 
+	@RequestMapping(value = "/cultivos", method = RequestMethod.GET)
+	public List<CategoriaDeCultivo> getCultivos() {
+		return cultivosRep.findAll();
+	}
 
-		@RequestMapping(value = "/cultivos", method = RequestMethod.GET)
-		public List<CategoriaDeCultivo> getCultivos() {
-			return cultivoService.getCultivos();
-		}
+	@RequestMapping(value = "/cultivo/{id}", method = RequestMethod.GET)
+	public CategoriaDeCultivo getCultivo(@PathVariable("id") long id) {
+		return cultivosRep.getOne(id);
+	}
+	
 
-		@RequestMapping(value = "/cultivo/{id}", method = RequestMethod.GET)
-		public CategoriaDeCultivo getCultivo(@PathVariable("id") long id) {
-			return cultivoService.getCultivoById(id);
-		}
-		
-
-		@RequestMapping(value = "/cultivos", method = RequestMethod.POST)
-		public ResponseEntity<Boolean> addCultivo(@RequestBody CategoriaDeCultivo cultivo) {
-			cultivoService.addCultivo(cultivo);
-			return new ResponseEntity<Boolean>(true,HttpStatus.CREATED);
-		}
-		
-		@RequestMapping(value = "/cultivo/{id}", method = RequestMethod.PUT)
-		public ResponseEntity<Boolean> modifyPelicula(@PathVariable("id") String id,@RequestBody CategoriaDeCultivo cultivo) {
-			cultivoService.modifyCultivo(cultivo);
-			return new ResponseEntity<Boolean>(true,HttpStatus.OK);
-		}
+	@RequestMapping(value = "/cultivos", method = RequestMethod.POST)
+	public ResponseEntity<Boolean> addCultivo(@RequestBody CategoriaDeCultivo cultivo) {
+		this.cultivosRep.save(cultivo);
+		return new ResponseEntity<Boolean>(true,HttpStatus.CREATED);
+	}
+	
+	@RequestMapping(value = "/cultivo/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<Boolean> modifyPelicula(@PathVariable("id") long id,@RequestBody CategoriaDeCultivo cultivo) {
+		CategoriaDeCultivo cult = cultivosRep.getOne(id);
+		cult.updateCultivo(cultivo);
+		cultivosRep.save(cult);
+		return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+	}
 }
