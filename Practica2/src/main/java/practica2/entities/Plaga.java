@@ -23,6 +23,18 @@ public class Plaga {
 	private List<Especie> listaEspecies;
 
 
+	public long getIdPlaga() {
+		return idPlaga;
+	}
+	public void setIdPlaga(long idPlaga) {
+		this.idPlaga = idPlaga;
+	}
+	public List<Especie> getListaEspecies() {
+		return listaEspecies;
+	}
+	public void setListaEspecies(List<Especie> listaEspecies) {
+		this.listaEspecies = listaEspecies;
+	}
 	public String getNombreVulgar() {
 		return nombreVulgar;
 	}
@@ -47,6 +59,12 @@ public class Plaga {
 	public void setSustanciasActivas(List<SustanciaActiva> sustanciasActivas) {
 		this.sustanciasActivas = sustanciasActivas;
 	}
-	
+	public void modifyPlaga(Plaga plaga) {
+		this.nombreVulgar = plaga.getNombreVulgar();
+		this.listaEspecies = plaga.getListaEspecies();
+		this.nombreCientifico = plaga.getNombreCientifico();
+		this.URL = plaga.getURL();
+		this.sustanciasActivas = plaga.getSustanciasActivas();		
+	}
 	
 }
