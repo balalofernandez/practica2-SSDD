@@ -26,8 +26,9 @@ public class EspecieRestController {
 	}
 
 	@RequestMapping(value = "/especies/{id}", method = RequestMethod.GET)
-	public Especie getEspecie(@PathVariable("id") long id) {
-		return especiesRep.getOne(id);
+	public List<Plaga> getEspecie(@PathVariable("id") long id) {
+		Especie esp = especiesRep.getOne(id);
+		return esp.getListaPlagas();
 	}
 	
 
