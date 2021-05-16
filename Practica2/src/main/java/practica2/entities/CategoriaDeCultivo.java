@@ -15,6 +15,7 @@ public class CategoriaDeCultivo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="idCultivo",updatable = false, nullable = false)
 	private long idcultivo;
 	
 	private String nombre;
@@ -29,7 +30,6 @@ public class CategoriaDeCultivo {
 	
 	//CategoriaDeCultivo(String nombre, List<Especie> listaEspecies)
 	public CategoriaDeCultivo(String nombre, List<Especie> listaEspecies) {
-		super();
 		this.nombre = nombre;
 		this.listaEspecies = listaEspecies;
 	}

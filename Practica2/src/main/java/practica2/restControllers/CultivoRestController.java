@@ -30,11 +30,18 @@ public class CultivoRestController {
 	@PostConstruct
 	public void init() {
 		Especie esp = new Especie("Sativa", "Sannabis Sativa" , "sativa.com", new ArrayList(),new ArrayList());
-		List especies = new ArrayList<Especie>();
+		Especie esp2 = new Especie("Kennebec", "Solanum tuberosum 'Kennebec'" , "kennebec.com", new ArrayList(),new ArrayList());
+		Especie esp3 = new Especie("Agria", "Solanum tuberosum 'Agria'" , "agria.com", new ArrayList(),new ArrayList());
+		List especiesc1 = new ArrayList<Especie>();
+		List especiesc2 = new ArrayList<Especie>();
 		especiesRep.save(esp);
-		especies.add(esp);
-		CategoriaDeCultivo cult = new CategoriaDeCultivo("Marihuana", especies);
-		CategoriaDeCultivo cult2 = new CategoriaDeCultivo("Patata", new ArrayList());
+		especiesRep.save(esp2);
+		especiesRep.save(esp3);
+		especiesc1.add(esp);
+		especiesc2.add(esp2);
+		especiesc2.add(esp3);
+		CategoriaDeCultivo cult = new CategoriaDeCultivo("Marihuana", especiesc1);
+		CategoriaDeCultivo cult2 = new CategoriaDeCultivo("Patata", especiesc2);
 		this.cultivosRep.save(cult);
 		this.cultivosRep.save(cult2);
 	}
@@ -45,8 +52,9 @@ public class CultivoRestController {
 	}
 
 	@RequestMapping(value = "/cultivo/{id}", method = RequestMethod.GET)
-	public CategoriaDeCultivo getCultivo(@PathVariable("id") long id) {
-		return cultivosRep.getOne(id);
+	public List<Especie> getCultivo(@PathVariable("id") long id) {
+		CategoriaDeCultivo c = cultivosRep.getOne(id);
+		return c.getListaEspecies();
 	}
 	
 
