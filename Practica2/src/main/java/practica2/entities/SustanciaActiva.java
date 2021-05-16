@@ -21,6 +21,17 @@ public class SustanciaActiva {
 	@ManyToMany
 	private List<Plaga> listaPlagas;
 	
+	
+	public SustanciaActiva() {
+	}
+	public SustanciaActiva(long idSustanciaActiva, String nombre, List<ProductoFitosanitario> productosFitosanitarios,
+			List<Plaga> listaPlagas) {
+		super();
+		this.idSustanciaActiva = idSustanciaActiva;
+		this.nombre = nombre;
+		this.productosFitosanitarios = productosFitosanitarios;
+		this.listaPlagas = listaPlagas;
+	}
 	public long getIdSustanciaActiva() {
 		return idSustanciaActiva;
 	}

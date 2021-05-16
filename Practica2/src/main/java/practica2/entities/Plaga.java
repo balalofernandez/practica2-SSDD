@@ -23,6 +23,18 @@ public class Plaga {
 	private List<Especie> listaEspecies;
 
 
+	public Plaga() {
+		
+	}
+	public Plaga(String nombreVulgar, String nombreCientifico, String uRL, List<SustanciaActiva> sustanciasActivas,
+			List<Especie> listaEspecies) {
+		super();
+		this.nombreVulgar = nombreVulgar;
+		this.nombreCientifico = nombreCientifico;
+		URL = uRL;
+		this.sustanciasActivas = sustanciasActivas;
+		this.listaEspecies = listaEspecies;
+	}
 	public long getIdPlaga() {
 		return idPlaga;
 	}

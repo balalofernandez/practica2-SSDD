@@ -23,6 +23,19 @@ public class Especie {
 	@ManyToMany
 	private List<CategoriaDeCultivo> listaCategorias;
 	
+	public Especie () {
+		
+	}
+	
+	public Especie(String nombreVulgar, String nombreCientifico, String uRL, List<Plaga> listaPlagas,
+			List<CategoriaDeCultivo> listaCategorias) {
+		super();
+		this.nombreVulgar = nombreVulgar;
+		this.nombreCientifico = nombreCientifico;
+		URL = uRL;
+		this.listaPlagas = listaPlagas;
+		this.listaCategorias = listaCategorias;
+	}
 	public String getNombreVulgar() {
 		return nombreVulgar;
 	}

@@ -23,6 +23,18 @@ public class CategoriaDeCultivo {
 	@ManyToMany
 	private List<Especie> listaEspecies;
 	
+	public CategoriaDeCultivo() {
+		
+	}
+	
+	//CategoriaDeCultivo(String nombre, List<Especie> listaEspecies)
+	public CategoriaDeCultivo(String nombre, List<Especie> listaEspecies) {
+		super();
+		this.nombre = nombre;
+		this.listaEspecies = listaEspecies;
+	}
+
+
 	public long getIdcultivo() {
 		return idcultivo;
 	}

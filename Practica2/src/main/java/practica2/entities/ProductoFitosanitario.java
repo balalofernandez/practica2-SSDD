@@ -19,6 +19,17 @@ public class ProductoFitosanitario {
 	@ManyToMany
 	private List<SustanciaActiva> listaSustanciasActivas;
 	
+	
+	public ProductoFitosanitario() {
+	}
+	public ProductoFitosanitario(long idProductoFitosanitario, String nombre, String uRL,
+			List<SustanciaActiva> listaSustanciasActivas) {
+		super();
+		this.idProductoFitosanitario = idProductoFitosanitario;
+		this.nombre = nombre;
+		URL = uRL;
+		this.listaSustanciasActivas = listaSustanciasActivas;
+	}
 	public long getIdProductoFitosanitario() {
 		return idProductoFitosanitario;
 	}
