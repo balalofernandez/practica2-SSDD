@@ -1,7 +1,7 @@
 $(function() {
 
 function eliminarArbol(elemento){
-	elemento.slideUp("slow",function() {		
+	elemento.slideUp("slow",function() {	
 		elemento.remove();
 	});
 }
@@ -16,16 +16,16 @@ $.getJSON(url_cultivos,
      function(respuesta) {
         lista =$('#ArbolLista');
 		for (cultivo in respuesta){
-			lista.append($('<li class =" list-group-item">').append(
+			lista.append($('<li class ="list-group-item">').append(
 				$(`<div class="row ${cultivo} "/>`).append(
-					$('<span class="cultivos col-10" id="a">')
+					$('<span class="cultivos col-10">')
 						.html(respuesta[cultivo].nombre)
 				).append(
-					$(`<span class="material-icons col-2 btn btn-light">`).attr('id', `${respuesta[cultivo].idcultivo}`).html("visibility")
+					$(`<span class="material-icons col-2 btn btn-light cultivos">`).attr('id', `${respuesta[cultivo].idcultivo}`).html("visibility")
 				)))
 			
 		}
-		$(`.btn`).click(function (){
+		$(`.btn.cultivos`).click(function (){
 			if($(this).hasClass("visible")){
 				$(this).removeClass("visible");
 				$(this).html("visibility");

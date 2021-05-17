@@ -2,6 +2,7 @@ package practica2.entities;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +14,7 @@ public class Especie {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="idCultivo",updatable = false, nullable = false)
 	private long idEspecie;
 	
 	private String nombreVulgar;
@@ -20,22 +22,29 @@ public class Especie {
 	private String URL;
 	@ManyToMany
 	private List<Plaga> listaPlagas;
-	@ManyToMany
+	/*@ManyToMany
 	private List<CategoriaDeCultivo> listaCategorias;
-	
+	*/
 	public Especie () {
 		
 	}
 	
-	public Especie(String nombreVulgar, String nombreCientifico, String uRL, List<Plaga> listaPlagas,
-			List<CategoriaDeCultivo> listaCategorias) {
+	public Especie(String nombreVulgar, String nombreCientifico, String uRL, List<Plaga> listaPlagas) {
 		super();
 		this.nombreVulgar = nombreVulgar;
 		this.nombreCientifico = nombreCientifico;
 		URL = uRL;
 		this.listaPlagas = listaPlagas;
-		this.listaCategorias = listaCategorias;
 	}
+	
+	public long getIdEspecie() {
+		return idEspecie;
+	}
+
+	public void setIdEspecie(long idEspecie) {
+		this.idEspecie = idEspecie;
+	}
+
 	public String getNombreVulgar() {
 		return nombreVulgar;
 	}
@@ -57,22 +66,15 @@ public class Especie {
 	public List<Plaga> getListaPlagas() {
 		return listaPlagas;
 	}
-	public List<CategoriaDeCultivo> getListaCategorias() {
-		return listaCategorias;
-	}
 	
 	public void setListaPlagas(List<Plaga> listaPlagas) {
 		this.listaPlagas = listaPlagas;
-	}
-	public void setListaCategorias(List<CategoriaDeCultivo> listaCategorias) {
-		this.listaCategorias = listaCategorias;
 	}
 	
 	public void modifyEspecie(Especie especie) {
 		this.nombreVulgar = especie.getNombreVulgar();
 		this.listaPlagas = especie.getListaPlagas();
 		this.nombreCientifico = especie.getNombreCientifico();
-		this.URL = especie.getURL();
-		this.listaCategorias = especie.getListaCategorias();		
+		this.URL = especie.getURL();		
 	}
 }

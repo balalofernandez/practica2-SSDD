@@ -19,33 +19,26 @@ public class Plaga {
 	private String URL;
 	@ManyToMany
 	private List<SustanciaActiva> sustanciasActivas;
-	@ManyToMany
+	/*@ManyToMany
 	private List<Especie> listaEspecies;
-
+	*/
 
 	public Plaga() {
 		
 	}
-	public Plaga(String nombreVulgar, String nombreCientifico, String uRL, List<SustanciaActiva> sustanciasActivas,
-			List<Especie> listaEspecies) {
+	public Plaga(String nombreVulgar, String nombreCientifico, String uRL, List<SustanciaActiva> sustanciasActivas) {
 		super();
 		this.nombreVulgar = nombreVulgar;
 		this.nombreCientifico = nombreCientifico;
 		URL = uRL;
 		this.sustanciasActivas = sustanciasActivas;
-		this.listaEspecies = listaEspecies;
 	}
+	
 	public long getIdPlaga() {
 		return idPlaga;
 	}
 	public void setIdPlaga(long idPlaga) {
 		this.idPlaga = idPlaga;
-	}
-	public List<Especie> getListaEspecies() {
-		return listaEspecies;
-	}
-	public void setListaEspecies(List<Especie> listaEspecies) {
-		this.listaEspecies = listaEspecies;
 	}
 	public String getNombreVulgar() {
 		return nombreVulgar;
@@ -73,7 +66,6 @@ public class Plaga {
 	}
 	public void modifyPlaga(Plaga plaga) {
 		this.nombreVulgar = plaga.getNombreVulgar();
-		this.listaEspecies = plaga.getListaEspecies();
 		this.nombreCientifico = plaga.getNombreCientifico();
 		this.URL = plaga.getURL();
 		this.sustanciasActivas = plaga.getSustanciasActivas();		

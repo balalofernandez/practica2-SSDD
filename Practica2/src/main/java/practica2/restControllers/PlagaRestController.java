@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-import practica2.entities.Plaga;
+import practica2.entities.*;
 import practica2.repository.PlagaRepository;
 
+@RestController
 public class PlagaRestController {
 
 	@Autowired
@@ -24,8 +26,9 @@ public class PlagaRestController {
 	}
 
 	@RequestMapping(value = "/plaga/{id}", method = RequestMethod.GET)
-	public Plaga getPlaga(@PathVariable("id") long id) {
-		return plagaRep.getOne(id);
+	public List<SustanciaActiva> getPlaga(@PathVariable("id") long id) {
+		Plaga p = plagaRep.getOne(id);
+		return p.getSustanciasActivas();
 	}
 	
 

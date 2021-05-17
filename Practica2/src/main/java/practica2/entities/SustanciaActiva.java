@@ -18,31 +18,22 @@ public class SustanciaActiva {
 	private String nombre;
 	@ManyToMany	
 	private List<ProductoFitosanitario> productosFitosanitarios;
+	/*
 	@ManyToMany
 	private List<Plaga> listaPlagas;
-	
+	*/
 	
 	public SustanciaActiva() {
 	}
-	public SustanciaActiva(long idSustanciaActiva, String nombre, List<ProductoFitosanitario> productosFitosanitarios,
-			List<Plaga> listaPlagas) {
-		super();
-		this.idSustanciaActiva = idSustanciaActiva;
+	public SustanciaActiva(String nombre, List<ProductoFitosanitario> productosFitosanitarios) {
 		this.nombre = nombre;
 		this.productosFitosanitarios = productosFitosanitarios;
-		this.listaPlagas = listaPlagas;
 	}
 	public long getIdSustanciaActiva() {
 		return idSustanciaActiva;
 	}
 	public void setIdSustanciaActiva(long idSustanciaActiva) {
 		this.idSustanciaActiva = idSustanciaActiva;
-	}
-	public List<Plaga> getListaPlagas() {
-		return listaPlagas;
-	}
-	public void setListaPlagas(List<Plaga> listaPlagas) {
-		this.listaPlagas = listaPlagas;
 	}
 	public String getNombre() {
 		return nombre;
@@ -60,6 +51,5 @@ public class SustanciaActiva {
 	public void updateSustanciaActiva(SustanciaActiva s) {
 		this.nombre =s.getNombre();
 		this.productosFitosanitarios = s.getProductosFitosanitarios();
-		this.listaPlagas = s.getListaPlagas();
 	}
 }
