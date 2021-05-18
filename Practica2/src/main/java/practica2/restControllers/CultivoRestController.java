@@ -60,13 +60,23 @@ public class CultivoRestController {
 	
 	@RequestMapping(value = "/cultivos", method = RequestMethod.GET)
 	public List<CategoriaDeCultivo> getCultivos() {
-		return cultivosRep.findAll();
+		List<CategoriaDeCultivo> cultivos = cultivosRep.findAll();
+		List<CategoriaDeCultivo> aux = new ArrayList<>();
+		for (CategoriaDeCultivo c:cultivos) {
+			c.setListaEspecies(new ArrayList());;
+			aux.add(c);
+		}
+		return aux;
 	}
 
 	@RequestMapping(value = "/cultivo/{id}", method = RequestMethod.GET)
 	public List<Especie> getCultivo(@PathVariable("id") long id) {
 		CategoriaDeCultivo c = cultivosRep.getOne(id);
-		return c.getListaEspecies();
+		List<Especie> aux = c.getListaEspecies();
+		for (Especie e:aux) {
+			e.setListaPlagas(new ArrayList());
+		}
+		return aux;
 	}
 	
 

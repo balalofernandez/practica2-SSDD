@@ -1,5 +1,6 @@
 package practica2.restControllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,11 @@ public class EspecieRestController {
 	@RequestMapping(value = "/especie/{id}", method = RequestMethod.GET)
 	public List<Plaga> getEspecie(@PathVariable("id") long id) {
 		Especie esp = especiesRep.getOne(id);
-		return esp.getListaPlagas();
+		List<Plaga> aux = esp.getListaPlagas();
+		for (Plaga c:aux) {
+			c.setSustanciasActivas(new ArrayList());
+		}
+		return aux;
 	}
 	
 
