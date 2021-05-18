@@ -9,7 +9,6 @@ function eliminarArbol(elemento){
 
 
 var url_cultivos ='http://localhost:8080/cultivos';
-var url_especies ='http://localhost:8080/especies';
 
 $.getJSON(url_cultivos,
 
