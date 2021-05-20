@@ -1,10 +1,10 @@
-
+//Esta funcion se utiliza para eliminar el subarbol
 function eliminarArbol(elemento){
 	elemento.slideUp("slow",function() {	
 		elemento.remove();
 	});
 }
-
+//Es una funcion que recibe especies de un cultivo haciendo una peticion AJAX al servidor
 function generarEspecies(lista,ide){
 	$.getJSON(`http://localhost:8080/cultivo/${ide}`, function(respuesta){
 		nestedList = $('<ul class="especies list-group"/>').insertAfter(lista)
@@ -12,11 +12,15 @@ function generarEspecies(lista,ide){
 			nestedList.append($('<li class="list-group-item">').append(
 				$(`<div class="row ${especie} "/>`).append(
 					$('<span class="especies col-10">')
-						.html(`${respuesta[especie].nombreVulgar}, ${respuesta[especie].nombreCientifico}, <a href="${respuesta[especie].uRL}">${respuesta[especie].uRL}<a/>`)
+						.html(`${respuesta[especie].nombreVulgar}, <a href="${respuesta[especie].uRL}">${respuesta[especie].uRL}<a/>`)
 				).append(
 					$(`<span class="material-icons col-2 btn btn-light especies">`).attr('id', `${respuesta[especie].idEspecie}`).html("visibility")
 			)))
+			$(`.${especie}`).children('.especies').easyTooltip({
+				content: `Nombre Científico : ${respuesta[especie].nombreCientifico}`
+			});
 		}
+		//esta funcion muestra el subarbol si no está visible o lo oculta si lo está
 		$(`.btn.especies`).click(function (){
 		if($(this).hasClass("visible")){
 			$(this).removeClass("visible");
