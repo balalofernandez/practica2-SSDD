@@ -6,26 +6,8 @@ function generarProductos(lista,idp){
 				nestedList.append($('<li class="list-group-item">').append(
 					$(`<div class="row ${prod} "/>`).append(
 						$('<span class="productos col">')
-							.html(respuesta[prod].nombre, respuesta[prod].URL)
+							.html(`${respuesta[prod].nombre}, <a href="${respuesta[prod].uRL}">${respuesta[prod].uRL}<a/>`)
 					)))
 			}
-			/*
-			$(`.btn`).click(function (){
-			if($(this).hasClass("visible")){
-				$(this).removeClass("visible");
-				$(this).html("visibility");
-				divUL =$(this).parent().parent().children('ul');	
-				eliminarArbol(divUL)
-			}
-			else{
-				$(this).addClass("visible");
-				$(this).html("visibility_off");
-				divPadre =$(this).parent();
-				id = $(this).attr('id');
-				generarSustanciasActivas(divPadre,id);				
-			}
-			
-		})
-			*/
 		})
 }
