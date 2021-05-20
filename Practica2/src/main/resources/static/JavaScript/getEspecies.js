@@ -16,6 +16,7 @@ function generarEspecies(lista,ide){
 				).append(
 					$(`<span class="material-icons col-2 btn btn-light especies">`).attr('id', `${respuesta[especie].idEspecie}`).html("visibility")
 			)))
+			//Mostramos el tooltip en toda la barra para que sea más comodo verlo
 			$(`.${especie}`).children('.especies').easyTooltip({
 				content: `Nombre Científico : ${respuesta[especie].nombreCientifico}`
 			});

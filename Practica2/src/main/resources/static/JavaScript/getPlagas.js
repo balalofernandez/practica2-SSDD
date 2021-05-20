@@ -16,7 +16,11 @@ function generarPlagas(lista,idpl){
 					).append(
 						$(`<span class="material-icons col-2 btn btn-light plagas">`).attr('id', `${respuesta[plaga].idPlaga}`).html("visibility")
 				)))
-			}//esta funcion muestra el subarbol si no está visible o lo oculta si lo está
+				$(`.${plaga}`).children('.plagas').easyTooltip({
+				content: `Nombre Científico : ${respuesta[plaga].nombreCientifico}`
+				});
+			}
+			//esta funcion muestra el subarbol si no está visible o lo oculta si lo está
 			$(`.btn.plagas`).click(function (){
 			if($(this).hasClass("visible")){
 				$(this).removeClass("visible");
