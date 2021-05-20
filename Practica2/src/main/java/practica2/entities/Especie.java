@@ -19,7 +19,7 @@ public class Especie {
 	
 	private String nombreVulgar;
 	private String nombreCientifico;
-	private String URL;
+	private String uRL;
 	@ManyToMany
 	private List<Plaga> listaPlagas;
 	/*@ManyToMany
@@ -30,10 +30,9 @@ public class Especie {
 	}
 	
 	public Especie(String nombreVulgar, String nombreCientifico, String uRL, List<Plaga> listaPlagas) {
-		super();
 		this.nombreVulgar = nombreVulgar;
 		this.nombreCientifico = nombreCientifico;
-		URL = uRL;
+		this.uRL = uRL;
 		this.listaPlagas = listaPlagas;
 	}
 	
@@ -57,11 +56,11 @@ public class Especie {
 	public void setNombreCientifico(String nombreCientifico) {
 		this.nombreCientifico = nombreCientifico;
 	}
-	public String getURL() {
-		return URL;
+	public String getuRL() {
+		return uRL;
 	}
-	public void setURL(String uRL) {
-		URL = uRL;
+	public void setuRL(String uRL) {
+		uRL = uRL;
 	}
 	public List<Plaga> getListaPlagas() {
 		return listaPlagas;
@@ -75,6 +74,6 @@ public class Especie {
 		this.nombreVulgar = especie.getNombreVulgar();
 		this.listaPlagas = especie.getListaPlagas();
 		this.nombreCientifico = especie.getNombreCientifico();
-		this.URL = especie.getURL();		
+		this.uRL = especie.getuRL();		
 	}
 }
