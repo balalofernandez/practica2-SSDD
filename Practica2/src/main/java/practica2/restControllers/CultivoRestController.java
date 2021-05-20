@@ -226,7 +226,7 @@ public class CultivoRestController {
 		List plagas6 = new ArrayList<Plaga>(Arrays.asList(p, p13));
 		List plagas7 = new ArrayList<Plaga>(Arrays.asList(p14, p));
 
-		Especie esp = new Especie("Osteen", "Mangus Osteen" , "sativa.com", plagas);
+		Especie esp = new Especie("Osteen", "Mangus Osteen" , "zaragozagrande.com", plagas);
 		Especie esp1 = new Especie("Kennebec", "Solanum tuberosum 'Kennebec'" , "kennebec.com", plagas1);
 		Especie esp2 = new Especie("Trigo Duro", "Durus Trigus", "trigus.com", plagas2);
 		Especie esp3 = new Especie("Trigo Espelta", "Trigus Intragablus" , "sequisimo.com", plagas3);

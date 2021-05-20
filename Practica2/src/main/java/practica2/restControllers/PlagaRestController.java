@@ -21,11 +21,13 @@ public class PlagaRestController {
 	@Autowired
 	private PlagaRepository plagaRep;
 	
+/*	//sirve para coger todas las plagas, pero no lo utilizamos
 	@RequestMapping(value = "/plagas", method = RequestMethod.GET)
 	public List<Plaga> getPlagas() {
 		return plagaRep.findAll();
 	}
-
+*/
+	//sirve para coger los productos fitosanitarios de una plaga en concreto
 	@RequestMapping(value = "/plaga/{id}", method = RequestMethod.GET)
 	public List<SustanciaActiva> getPlaga(@PathVariable("id") long id) {
 		Plaga p = plagaRep.getOne(id);
@@ -35,22 +37,4 @@ public class PlagaRestController {
 		}
 		return aux;
 	}
-	
-
-	@RequestMapping(value = "/plagas", method = RequestMethod.POST)
-	public ResponseEntity<Boolean> addPlaga(@RequestBody Plaga plaga) {
-		plagaRep.save(plaga);
-		return new ResponseEntity<Boolean>(true,HttpStatus.CREATED);
-	}
-	
-	@RequestMapping(value = "/plaga/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Boolean> modifyPlaga(
-			@PathVariable("id") long id,
-			@RequestBody Plaga plaga) {
-		Plaga plagaAux = plagaRep.getOne(id);
-		plagaAux.modifyPlaga(plaga);
-		plagaRep.save(plagaAux);
-		return new ResponseEntity<Boolean>(true,HttpStatus.OK);
-	}
-	
 }

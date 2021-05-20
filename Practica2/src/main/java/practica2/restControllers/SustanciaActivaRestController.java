@@ -21,30 +21,17 @@ public class SustanciaActivaRestController {
 	@Autowired
 	private SustanciaActivaRepository sustanciaRep;
 
+/*	//sirve para coger todas las sustancias, pero no lo utilizamos
 	@RequestMapping(value = "/sustanciasActivas", method = RequestMethod.GET)
 	public List<SustanciaActiva> getSustanciasActivas() {
 		return sustanciaRep.findAll();
 	}
-
+*/
+	//sirve para tomar los productos asociados a una sustancia
 	@RequestMapping(value = "/sustanciaActiva/{id}", method = RequestMethod.GET)
 	public List<ProductoFitosanitario> getProductoDeSA(@PathVariable("id") long id) {
 		SustanciaActiva s = sustanciaRep.getOne(id);
 		List<ProductoFitosanitario> aux = s.getProductosFitosanitarios();
 		return aux;
-	}
-	
-
-	@RequestMapping(value = "/sustanciasActivas", method = RequestMethod.POST)
-	public ResponseEntity<Boolean> addSustanciaActiva(@RequestBody SustanciaActiva sa) {
-		this.sustanciaRep.save(sa);
-		return new ResponseEntity<Boolean>(true,HttpStatus.CREATED);
-	}
-	
-	@RequestMapping(value = "/sustanciasActivas/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Boolean> modifySustanciaActiva(@PathVariable("id") long id,@RequestBody SustanciaActiva sa) {
-		SustanciaActiva sustancia = sustanciaRep.getOne(id);
-		sustancia.updateSustanciaActiva(sa);
-		sustanciaRep.save(sustancia);
-		return new ResponseEntity<Boolean>(true,HttpStatus.OK);
 	}
 }

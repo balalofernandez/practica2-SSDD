@@ -20,12 +20,14 @@ public class EspecieRestController {
 
 	@Autowired
 	private EspecieRepository especiesRep;
-
+	
+/*  //sirve para coger todas las especies, pero no lo utilizamos
 	@RequestMapping(value = "/especies", method = RequestMethod.GET)
 	public List<Especie> getEspecie() {
 		return especiesRep.findAll();
 	}
-
+*/
+	//coge de una especie en particular las plagas
 	@RequestMapping(value = "/especie/{id}", method = RequestMethod.GET)
 	public List<Plaga> getEspecie(@PathVariable("id") long id) {
 		Especie esp = especiesRep.getOne(id);
@@ -34,20 +36,5 @@ public class EspecieRestController {
 			c.setSustanciasActivas(new ArrayList());
 		}
 		return aux;
-	}
-	
-
-	@RequestMapping(value = "/especies", method = RequestMethod.POST)
-	public ResponseEntity<Boolean> addCultivo(@RequestBody Especie especie) {
-		this.especiesRep.save(especie);
-		return new ResponseEntity<Boolean>(true,HttpStatus.CREATED);
-	}
-	
-	@RequestMapping(value = "/especies/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Boolean> modifyPelicula(@PathVariable("id") long id,@RequestBody Especie especie) {
-		Especie esp = especiesRep.getOne(id);
-		esp.modifyEspecie(especie);
-		especiesRep.save(esp);
-		return new ResponseEntity<Boolean>(true,HttpStatus.OK);
 	}
 }
