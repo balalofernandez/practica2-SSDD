@@ -12,7 +12,7 @@ function generarEspecies(lista,ide){
 			nestedList.append($('<li class="list-group-item">').append(
 				$(`<div class="row ${especie} "/>`).append(
 					$('<span class="especies col-10">')
-						.html(respuesta[especie].nombreVulgar)
+						.html(respuesta[especie].nombreVulgar, respuesta[especie].nombreCientifico, respuesta[especie].URL)
 				).append(
 					$(`<span class="material-icons col-2 btn btn-light especies">`).attr('id', `${respuesta[especie].idEspecie}`).html("visibility")
 			)))

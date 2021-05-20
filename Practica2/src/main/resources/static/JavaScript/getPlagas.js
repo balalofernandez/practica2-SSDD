@@ -12,7 +12,7 @@ function generarPlagas(lista,idpl){
 				nestedList.append($('<li class="list-group-item">').append(
 					$(`<div class="row ${plaga} "/>`).append(
 						$('<span class="plagas col-10">')
-							.html(respuesta[plaga].nombreVulgar)
+							.html(respuesta[plaga].nombreVulgar,respuesta[plaga].nombreCientifico, respuesta[plaga].URL)
 					).append(
 						$(`<span class="material-icons col-2 btn btn-light plagas">`).attr('id', `${respuesta[plaga].idPlaga}`).html("visibility")
 				)))

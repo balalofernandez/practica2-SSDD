@@ -6,7 +6,7 @@ function generarProductos(lista,idp){
 				nestedList.append($('<li class="list-group-item">').append(
 					$(`<div class="row ${prod} "/>`).append(
 						$('<span class="productos col">')
-							.html(respuesta[prod].nombre)
+							.html(respuesta[prod].nombre, respuesta[prod].URL)
 					)))
 			}
 			/*

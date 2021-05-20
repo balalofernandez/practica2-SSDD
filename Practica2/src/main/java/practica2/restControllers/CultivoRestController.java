@@ -104,15 +104,15 @@ public class CultivoRestController {
 		List productos3 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod4));
 		List productos4 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod2, prod5));
 		List productos5 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod17, prod21, prod15));
-		List productos6 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod9, prod5, prod29, prod13));
+		List productos6 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod9, prod5, prod29, prod13, prod7));
 		List productos7 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod));
-		List productos8 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod));
-		List productos9 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod));
-		List productos10 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod));
-		List productos11 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod));
-		List productos12 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod));
-		List productos13 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod));
-		List productos14 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod));
+		List productos8 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod, prod1, prod2, prod3, prod7));
+		List productos9 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod, prod5, prod29));
+		List productos10 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod,prod13));
+		List productos11 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod, prod14));
+		List productos12 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod, prod25, prod29));
+		List productos13 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod,prod9,prod2));
+		List productos14 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod, prod13, prod23));
 		List productos15 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod18, prod7, prod19));
 		List productos16 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod2, prod6));
 		List productos17 = new ArrayList<ProductoFitosanitario>(Arrays.asList(prod, prod18, prod11));
@@ -174,7 +174,7 @@ public class CultivoRestController {
 		List sustancias7 = new ArrayList<SustanciaActiva>(Arrays.asList(sa8, sa13));
 		List sustancias8 = new ArrayList<SustanciaActiva>(Arrays.asList(sa19, sa18));
 		List sustancias9 = new ArrayList<SustanciaActiva>(Arrays.asList(sa11, sa5));
-		List sustancias10 = new ArrayList<SustanciaActiva>(Arrays.asList(sa12, sa17, sa16));
+		List sustancias10 = new ArrayList<SustanciaActiva>(Arrays.asList(sa12, sa17, sa16, sa14));
 		List sustancias11 = new ArrayList<SustanciaActiva>(Arrays.asList(sa9));
 		List sustancias12 = new ArrayList<SustanciaActiva>(Arrays.asList(sa12, sa18));
 		List sustancias13 = new ArrayList<SustanciaActiva>(Arrays.asList(sa3));
@@ -248,7 +248,7 @@ public class CultivoRestController {
 		List especies = new ArrayList<Especie>(Arrays.asList(esp));
 		List especies1 = new ArrayList<Especie>(Arrays.asList(esp2,esp3));
 		List especies2 = new ArrayList<Especie>(Arrays.asList(esp1,esp4, esp5));
-		List especies3 = new ArrayList<Especie>(Arrays.asList(esp7,esp6));
+		List especies3 = new ArrayList<Especie>(Arrays.asList(esp7,esp6,esp3));
 
 
 		CategoriaDeCultivo cult = new CategoriaDeCultivo("Mangos", especies);

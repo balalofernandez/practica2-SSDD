@@ -12,7 +12,7 @@ function generarSustanciasActivas(lista,ids){
 				nestedList.append($('<li class="list-group-item">').append(
 					$(`<div class="row ${sustancia} "/>`).append(
 						$('<span class="sustancias col-10">')
-							.html(respuesta[sustancia].nombre)
+							.html(respuesta[sustancia].nombre, respuesta[sustancia].URL)
 					).append(
 						$(`<span class="material-icons col-2 btn btn-light sustancias">`).attr('id', `${respuesta[sustancia].idSustanciaActiva}`).html("visibility")
 				)))
