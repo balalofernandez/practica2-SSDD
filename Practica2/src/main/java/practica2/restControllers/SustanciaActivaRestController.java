@@ -1,5 +1,6 @@
 package practica2.restControllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +27,10 @@ public class SustanciaActivaRestController {
 	}
 
 	@RequestMapping(value = "/sustanciaActiva/{id}", method = RequestMethod.GET)
-	public List<ProductoFitosanitario> getSustanciaActiva(@PathVariable("id") long id) {
+	public List<ProductoFitosanitario> getProductoDeSA(@PathVariable("id") long id) {
 		SustanciaActiva s = sustanciaRep.getOne(id);
-		return s.getProductosFitosanitarios();
+		List<ProductoFitosanitario> aux = s.getProductosFitosanitarios();
+		return aux;
 	}
 	
 
