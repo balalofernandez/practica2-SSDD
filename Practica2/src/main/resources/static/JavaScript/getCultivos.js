@@ -17,12 +17,13 @@ $.getJSON(url_cultivos,
 		for (cultivo in respuesta){
 			lista.append($('<li class ="list-group-item">').append(
 				$(`<div class="row ${cultivo} "/>`).append(
-					$('<span class="cultivos col-10">')
-						.html(`${respuesta[cultivo].nombre}`)
+					$(`<span class="cultivos col-10"> ${respuesta[cultivo].nombre} <span/>`)
+					/*.easyTooltip({
+							content: "Test Content."
+					})*/
 				).append(
 					$(`<span class="material-icons col-2 btn btn-light cultivos">`).attr('id', `${respuesta[cultivo].idcultivo}`).html("visibility")
 				)))
-			
 		}
 		$(`.btn.cultivos`).click(function (){
 			if($(this).hasClass("visible")){
