@@ -190,13 +190,13 @@ public class CultivoRestController {
 		Plaga p6 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias6);
 		Plaga p7 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias7);
 		Plaga p8 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias8);
-		Plaga p9 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias9);
-		Plaga p10 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias10);
-		Plaga p11 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias11);
-		Plaga p12 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias12);
-		Plaga p13 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias13);
-		Plaga p14 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias14);
-		Plaga p15 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias15);
+		Plaga p9 = new Plaga("Colémbolo", "Collembola", "collembolos.com",sustancias9);
+		Plaga p10 = new Plaga("Colembolos", "Plagus canabidus", "colembolos.com",sustancias10);
+		Plaga p11 = new Plaga("Saltahojas", "Cicadellidae", "saltador.com",sustancias11);
+		Plaga p12 = new Plaga("Hemiptero", "Hemiptera", "Hemiptera.com",sustancias12);
+		Plaga p13 = new Plaga("Perganade", "Frankliniella occidentalis", "perganade.com",sustancias13);
+		Plaga p14 = new Plaga("Trips", "Thysanoptera", "trips.com",sustancias14);
+		Plaga p15 = new Plaga("Araña Roja", "Rotten Aracnidus", "arana.com",sustancias15);
 
 
 		plagaRep.save(p);
