@@ -1,4 +1,4 @@
-
+//Es una funcion que recibe productos de una sustancia haciendo una peticion AJAX al servidor
 function generarProductos(lista,idp){
 	$.getJSON(`http://localhost:8080/sustanciaActiva/${idp}`, function(respuesta){
 			nestedList = $('<ul class="productos list-group"/>').insertAfter(lista)
