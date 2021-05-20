@@ -190,13 +190,13 @@ public class CultivoRestController {
 		Plaga p6 = new Plaga("Libelula Alcachofera", "Volate Ascendere", "libelula.com",sustancias6);
 		Plaga p7 = new Plaga("Emperador Cesar", "Pijus Magnificus", "emperador.com",sustancias7);
 		Plaga p8 = new Plaga("Centurion Brian", "Traviesus Maximus", "lavidadebrian.com",sustancias8);
-		Plaga p9 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias9);
-		Plaga p10 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias10);
-		Plaga p11 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias11);
-		Plaga p12 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias12);
-		Plaga p13 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias13);
-		Plaga p14 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias14);
-		Plaga p15 = new Plaga("Plaga de cannabis", "Plagus canabidus", "nose.com",sustancias15);
+		Plaga p9 = new Plaga("Colémbolo", "Collembola", "collembolos.com",sustancias9);
+		Plaga p10 = new Plaga("Colembolos", "Plagus canabidus", "colembolos.com",sustancias10);
+		Plaga p11 = new Plaga("Saltahojas", "Cicadellidae", "saltador.com",sustancias11);
+		Plaga p12 = new Plaga("Hemiptero", "Hemiptera", "Hemiptera.com",sustancias12);
+		Plaga p13 = new Plaga("Perganade", "Frankliniella occidentalis", "perganade.com",sustancias13);
+		Plaga p14 = new Plaga("Trips", "Thysanoptera", "trips.com",sustancias14);
+		Plaga p15 = new Plaga("Araña Roja", "Rotten Aracnidus", "arana.com",sustancias15);
 
 
 		plagaRep.save(p);
@@ -226,14 +226,14 @@ public class CultivoRestController {
 		List plagas6 = new ArrayList<Plaga>(Arrays.asList(p, p13));
 		List plagas7 = new ArrayList<Plaga>(Arrays.asList(p14, p));
 
-		Especie esp = new Especie("Sativa", "Sannabis Sativa" , "sativa.com", plagas);
+		Especie esp = new Especie("Osteen", "Mangus Osteen" , "sativa.com", plagas);
 		Especie esp1 = new Especie("Kennebec", "Solanum tuberosum 'Kennebec'" , "kennebec.com", plagas1);
-		Especie esp2 = new Especie("Agria", "Solanum tuberosum 'Agria'" , "agria.com", plagas2);
-		Especie esp3 = new Especie("Agria", "Solanum tuberosum 'Agria'" , "agria.com", plagas3);
+		Especie esp2 = new Especie("Trigo Duro", "Durus Trigus", "trigus.com", plagas2);
+		Especie esp3 = new Especie("Trigo Espelta", "Trigus Intragablus" , "sequisimo.com", plagas3);
 		Especie esp4 = new Especie("Agria", "Solanum tuberosum 'Agria'" , "agria.com", plagas4);
-		Especie esp5 = new Especie("Agria", "Solanum tuberosum 'Agria'" , "agria.com", plagas5);
-		Especie esp6= new Especie("Agria", "Solanum tuberosum 'Agria'" , "agria.com", plagas6);
-		Especie esp7 = new Especie("Agria", "Solanum tuberosum 'Agria'" , "agria.com", plagas7);
+		Especie esp5 = new Especie("Manchada", "Solanum tuberosum 'Manchada'" , "maann.com", plagas5);
+		Especie esp6= new Especie("Maiz", "Zea mays " , "ZeaMays.com", plagas6);
+		Especie esp7 = new Especie("Pimientos", "Capsicum" , "pimientosPadron.com", plagas7);
 
 		especiesRep.save(esp);
 		especiesRep.save(esp1);
@@ -247,13 +247,13 @@ public class CultivoRestController {
 
 		List especies = new ArrayList<Especie>(Arrays.asList(esp));
 		List especies1 = new ArrayList<Especie>(Arrays.asList(esp2,esp3));
-		List especies2 = new ArrayList<Especie>(Arrays.asList(esp,esp5, esp6));
-		List especies3 = new ArrayList<Especie>(Arrays.asList(esp7,esp4));
+		List especies2 = new ArrayList<Especie>(Arrays.asList(esp1,esp4, esp5));
+		List especies3 = new ArrayList<Especie>(Arrays.asList(esp7,esp6));
 
 
-		CategoriaDeCultivo cult = new CategoriaDeCultivo("Marihuana", especies);
-		CategoriaDeCultivo cult1 = new CategoriaDeCultivo("Patata", especies1);
-		CategoriaDeCultivo cult2 = new CategoriaDeCultivo("Hortaliza", especies2);
+		CategoriaDeCultivo cult = new CategoriaDeCultivo("Mangos", especies);
+		CategoriaDeCultivo cult1 = new CategoriaDeCultivo("Trigo", especies1);
+		CategoriaDeCultivo cult2 = new CategoriaDeCultivo("Patata", especies2);
 		CategoriaDeCultivo cult3 = new CategoriaDeCultivo("Transgénicos", especies3);
 
 		this.cultivosRep.save(cult);
