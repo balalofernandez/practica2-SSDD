@@ -253,8 +253,8 @@ public class CultivoRestController {
 
 		CategoriaDeCultivo cult = new CategoriaDeCultivo("Marihuana", especies);
 		CategoriaDeCultivo cult1 = new CategoriaDeCultivo("Patata", especies1);
-		CategoriaDeCultivo cult2 = new CategoriaDeCultivo("Hortaliza", especies2)
-		CategoriaDeCultivo cult3 = new CategoriaDeCultivo("Transgénicos", especies3)
+		CategoriaDeCultivo cult2 = new CategoriaDeCultivo("Hortaliza", especies2);
+		CategoriaDeCultivo cult3 = new CategoriaDeCultivo("Transgénicos", especies3);
 
 		this.cultivosRep.save(cult);
 
