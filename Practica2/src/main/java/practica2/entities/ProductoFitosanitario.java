@@ -15,7 +15,7 @@ public class ProductoFitosanitario {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idProductoFitosanitario;
 	private String nombre;
-	private String URL;
+	private String uRL;
 	/*
 	@ManyToMany
 	private List<SustanciaActiva> listaSustanciasActivas;
@@ -25,7 +25,7 @@ public class ProductoFitosanitario {
 	}
 	public ProductoFitosanitario( String nombre, String uRL) {
 		this.nombre = nombre;
-		URL = uRL;
+		uRL = uRL;
 	}
 	public long getIdProductoFitosanitario() {
 		return idProductoFitosanitario;
@@ -39,15 +39,15 @@ public class ProductoFitosanitario {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getURL() {
-		return URL;
+	public String getuRL() {
+		return uRL;
 	}
-	public void setURL(String uRL) {
-		URL = uRL;
+	public void setuRL(String uRL) {
+		uRL = uRL;
 	}
 	public void updateProductoFitosanitario(ProductoFitosanitario prod) {
 		this.nombre = prod.getNombre();
-		this.URL = prod.getURL();
+		this.uRL = prod.getuRL();
 	}
 
 }

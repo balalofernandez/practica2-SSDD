@@ -16,7 +16,7 @@ public class Plaga {
 	private long idPlaga;
 	private String nombreVulgar;
 	private String nombreCientifico;
-	private String URL;
+	private String uRL;
 	@ManyToMany
 	private List<SustanciaActiva> sustanciasActivas;
 	/*@ManyToMany
@@ -30,7 +30,7 @@ public class Plaga {
 		super();
 		this.nombreVulgar = nombreVulgar;
 		this.nombreCientifico = nombreCientifico;
-		URL = uRL;
+		this.uRL = uRL;
 		this.sustanciasActivas = sustanciasActivas;
 	}
 	
@@ -52,11 +52,11 @@ public class Plaga {
 	public void setNombreCientifico(String nombreCientifico) {
 		this.nombreCientifico = nombreCientifico;
 	}
-	public String getURL() {
-		return URL;
+	public String getuRL() {
+		return uRL;
 	}
-	public void setURL(String uRL) {
-		URL = uRL;
+	public void setuRL(String uRL) {
+		uRL = uRL;
 	}
 	public List<SustanciaActiva> getSustanciasActivas() {
 		return sustanciasActivas;
@@ -67,7 +67,7 @@ public class Plaga {
 	public void modifyPlaga(Plaga plaga) {
 		this.nombreVulgar = plaga.getNombreVulgar();
 		this.nombreCientifico = plaga.getNombreCientifico();
-		this.URL = plaga.getURL();
+		this.uRL = plaga.getuRL();
 		this.sustanciasActivas = plaga.getSustanciasActivas();		
 	}
 	
