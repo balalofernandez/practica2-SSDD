@@ -18,7 +18,7 @@ $.getJSON(url_cultivos,
 			lista.append($('<li class ="list-group-item">').append(
 				$(`<div class="row ${cultivo} "/>`).append(
 					$('<span class="cultivos col-10">')
-						.html(respuesta[cultivo].nombre, respuesta[cultivo].URL)
+						.html(`${respuesta[cultivo].nombre}`)
 				).append(
 					$(`<span class="material-icons col-2 btn btn-light cultivos">`).attr('id', `${respuesta[cultivo].idcultivo}`).html("visibility")
 				)))

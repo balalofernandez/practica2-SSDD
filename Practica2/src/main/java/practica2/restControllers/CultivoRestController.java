@@ -35,7 +35,7 @@ public class CultivoRestController {
 	
 	@PostConstruct
 	public void init() {
-		ProductoFitosanitario prod = new ProductoFitosanitario("PRODUCTAKO", "productaco.com");
+		ProductoFitosanitario prod = new ProductoFitosanitario("Armin", "armin.com");
 		ProductoFitosanitario prod1 = new ProductoFitosanitario("Fitosanitario Mayor", "mayor.com");
 		ProductoFitosanitario prod2 = new ProductoFitosanitario("RLS", "rls.com");
 		ProductoFitosanitario prod3 = new ProductoFitosanitario("Kriptonita", "kriptonita.com");
@@ -178,7 +178,7 @@ public class CultivoRestController {
 		List sustancias11 = new ArrayList<SustanciaActiva>(Arrays.asList(sa9));
 		List sustancias12 = new ArrayList<SustanciaActiva>(Arrays.asList(sa12, sa18));
 		List sustancias13 = new ArrayList<SustanciaActiva>(Arrays.asList(sa3));
-		List sustancias14 = new ArrayList<SustanciaActiva>(Arrays.asList());
+		List sustancias14 = new ArrayList<SustanciaActiva>(Arrays.asList(sa19));
 		List sustancias15 = new ArrayList<SustanciaActiva>(Arrays.asList(sa, sa2));
 
 		Plaga p = new Plaga("Langosta", "Crustaceous Maximus", "langosta.com",sustancias);
@@ -265,7 +265,7 @@ public class CultivoRestController {
 	}
 
 	
-
+	
 	@RequestMapping(value = "/cultivos", method = RequestMethod.GET)
 
 	public List<CategoriaDeCultivo> getCultivos() {
@@ -289,18 +289,4 @@ public class CultivoRestController {
 		return aux;
 	}
 	
-
-	@RequestMapping(value = "/cultivos", method = RequestMethod.POST)
-	public ResponseEntity<Boolean> addCultivo(@RequestBody CategoriaDeCultivo cultivo) {
-		this.cultivosRep.save(cultivo);
-		return new ResponseEntity<Boolean>(true,HttpStatus.CREATED);
-	}
-	
-	@RequestMapping(value = "/cultivo/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Boolean> modifyCultivo(@PathVariable("id") long id,@RequestBody CategoriaDeCultivo cultivo) {
-		CategoriaDeCultivo cult = cultivosRep.getOne(id);
-		cult.updateCultivo(cultivo);
-		cultivosRep.save(cult);
-		return new ResponseEntity<Boolean>(true,HttpStatus.OK);
-	}
 }
