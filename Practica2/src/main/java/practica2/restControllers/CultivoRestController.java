@@ -33,6 +33,7 @@ public class CultivoRestController {
 	@Autowired
 	private ProductoFitosanitarioRepository productoRep;
 	
+	//este método inicializa todos los valores de la base de datos
 	@PostConstruct
 	public void init() {
 		ProductoFitosanitario prod = new ProductoFitosanitario("Armin", "armin.com");
@@ -265,9 +266,8 @@ public class CultivoRestController {
 	}
 
 	
-	
+	//toma todos los cultivos de la base de datos 
 	@RequestMapping(value = "/cultivos", method = RequestMethod.GET)
-
 	public List<CategoriaDeCultivo> getCultivos() {
 		List<CategoriaDeCultivo> cultivos = cultivosRep.findAll();
 		List<CategoriaDeCultivo> aux = new ArrayList<>();
@@ -278,7 +278,7 @@ public class CultivoRestController {
 		return aux;
 	}
 	
-
+	//Toma todas las plagas de un cultivo especifico
 	@RequestMapping(value = "/cultivo/{id}", method = RequestMethod.GET)
 	public List<Especie> getCultivo(@PathVariable("id") long id) {
 		CategoriaDeCultivo c = cultivosRep.getOne(id);

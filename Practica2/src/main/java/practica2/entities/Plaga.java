@@ -19,10 +19,7 @@ public class Plaga {
 	private String uRL;
 	@ManyToMany
 	private List<SustanciaActiva> sustanciasActivas;
-	/*@ManyToMany
-	private List<Especie> listaEspecies;
-	*/
-
+	
 	public Plaga() {
 		
 	}

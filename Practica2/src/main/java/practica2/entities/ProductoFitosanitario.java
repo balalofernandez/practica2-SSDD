@@ -16,16 +16,12 @@ public class ProductoFitosanitario {
 	private long idProductoFitosanitario;
 	private String nombre;
 	private String uRL;
-	/*
-	@ManyToMany
-	private List<SustanciaActiva> listaSustanciasActivas;
-	*/
 	
 	public ProductoFitosanitario() {
 	}
 	public ProductoFitosanitario( String nombre, String uRL) {
 		this.nombre = nombre;
-		uRL = uRL;
+		this.uRL = uRL;
 	}
 	public long getIdProductoFitosanitario() {
 		return idProductoFitosanitario;

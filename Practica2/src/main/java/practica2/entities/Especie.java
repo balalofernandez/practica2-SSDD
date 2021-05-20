@@ -22,9 +22,6 @@ public class Especie {
 	private String uRL;
 	@ManyToMany
 	private List<Plaga> listaPlagas;
-	/*@ManyToMany
-	private List<CategoriaDeCultivo> listaCategorias;
-	*/
 	public Especie () {
 		
 	}
