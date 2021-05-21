@@ -19,7 +19,7 @@ function generarEspecies(lista,ide){
 			)))
 			$(`.${respuesta[especie].idEspecie}`).children('.especies').children('.texto')
 			.easyTooltip({
-				content: `${respuesta[especie].nombreCientifico}`
+				content: `<span>${respuesta[especie].nombreCientifico}<span/>`
 			});
 		}
 		//Mostramos el tooltip en toda la barra para que sea más comodo verlo

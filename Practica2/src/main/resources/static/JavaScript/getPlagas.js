@@ -19,7 +19,7 @@ function generarPlagas(lista,idpl){
 				)))
 				$(`.${respuesta[plaga].idPlaga}`).children('.plagas').children('.texto')
 				.easyTooltip({
-					content: `${respuesta[plaga].nombreCientifico}`
+					content: `<span>${respuesta[plaga].nombreCientifico}<span/>`
 				});
 			}
 			//esta funcion muestra el subarbol si no está visible o lo oculta si lo está
