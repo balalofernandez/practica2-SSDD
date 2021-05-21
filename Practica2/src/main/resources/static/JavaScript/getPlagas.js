@@ -10,14 +10,16 @@ function generarPlagas(lista,idpl){
 			nestedList = $('<ul class="plagas list-group"/>').insertAfter(lista)
 			for (plaga in respuesta){
 				nestedList.append($('<li class="list-group-item">').append(
-					$(`<div class="row ${plaga} "/>`).append(
+					$(`<div class="row ${respuesta[plaga].idPlaga} "/>`).append(
 						$('<span class="plagas col-10">')
-							.html(`${respuesta[plaga].nombreVulgar}, <a href="${respuesta[plaga].uRL}">${respuesta[plaga].uRL}<a/>`)
+							.html(`<span class="texto"> ${respuesta[plaga].nombreVulgar}<span/>
+							 <a href="${respuesta[plaga].uRL}">${respuesta[plaga].uRL}<a/>`)
 					).append(
 						$(`<span class="material-icons col-2 btn btn-light plagas">`).attr('id', `${respuesta[plaga].idPlaga}`).html("visibility")
 				)))
-				$(`.${plaga}`).children('.plagas').easyTooltip({
-				content: `Nombre Científico : ${respuesta[plaga].nombreCientifico}`
+				$(`.${respuesta[plaga].idPlaga}`).children('.plagas').children('.texto')
+				.easyTooltip({
+					content: `${respuesta[plaga].nombreCientifico}`
 				});
 			}
 			//esta funcion muestra el subarbol si no está visible o lo oculta si lo está

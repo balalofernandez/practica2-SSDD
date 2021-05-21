@@ -10,17 +10,23 @@ function generarEspecies(lista,ide){
 		nestedList = $('<ul class="especies list-group"/>').insertAfter(lista)
 		for (especie in respuesta){
 			nestedList.append($('<li class="list-group-item">').append(
-				$(`<div class="row ${especie} "/>`).append(
+				$(`<div class="row  ${respuesta[especie].idEspecie}"/>`).append(
 					$('<span class="especies col-10">')
-						.html(`${respuesta[especie].nombreVulgar}, <a href="${respuesta[especie].uRL}">${respuesta[especie].uRL}<a/>`)
+						.html(`<span class="texto"> ${respuesta[especie].nombreVulgar}<span/>
+						<a href="${respuesta[especie].uRL}">${respuesta[especie].uRL}<a/>`)
 				).append(
 					$(`<span class="material-icons col-2 btn btn-light especies">`).attr('id', `${respuesta[especie].idEspecie}`).html("visibility")
 			)))
-			//Mostramos el tooltip en toda la barra para que sea más comodo verlo
-			$(`.${especie}`).children('.especies').easyTooltip({
-				content: `Nombre Científico : ${respuesta[especie].nombreCientifico}`
+			$(`.${respuesta[especie].idEspecie}`).children('.especies').children('.texto')
+			.easyTooltip({
+				content: `${respuesta[especie].nombreCientifico}`
 			});
 		}
+		//Mostramos el tooltip en toda la barra para que sea más comodo verlo
+		/*var texto = $(`.especies`).children('.texto')
+		texto.easyTooltip({
+			content: `${texto.attr('title')}`
+		});*/
 		//esta funcion muestra el subarbol si no está visible o lo oculta si lo está
 		$(`.btn.especies`).click(function (){
 		if($(this).hasClass("visible")){
