@@ -16,9 +16,9 @@ function generarSustanciasActivas(lista,ids){
 					).append(
 						$(`<span class="material-icons col-2 btn btn-light sustancias">`).attr('id', `${respuesta[sustancia].idSustanciaActiva}`).html("visibility")
 				)))
-			}
+			
 			//esta funcion muestra el subarbol si no está visible o lo oculta si lo está
-			$(`.btn.sustancias`).click(function (){
+			$(`.btn#${respuesta[sustancia].idSustanciaActiva}`).click(function (){
 			if($(this).hasClass("visible")){
 				try{
 				$(this).removeClass("visible");
@@ -44,6 +44,6 @@ function generarSustanciasActivas(lista,ids){
 						
 			}
 		})
-			
+		}	
 		})
 }

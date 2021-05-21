@@ -21,9 +21,9 @@ function generarPlagas(lista,idpl){
 				.easyTooltip({
 					content: `<span>${respuesta[plaga].nombreCientifico}<span/>`
 				});
-			}
+			
 			//esta funcion muestra el subarbol si no está visible o lo oculta si lo está
-			$(`.btn.plagas`).click(function (){
+			$(`.btn#${respuesta[plaga].idPlaga}`).click(function (){
 			if($(this).hasClass("visible")){
 				$(this).removeClass("visible");
 				$(this).html("visibility");
@@ -38,6 +38,6 @@ function generarPlagas(lista,idpl){
 				generarSustanciasActivas(divPadre,id);				
 			}
 		})
-			
+		}	
 		})
 }

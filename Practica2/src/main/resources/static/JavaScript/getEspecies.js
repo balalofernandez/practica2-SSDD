@@ -21,14 +21,8 @@ function generarEspecies(lista,ide){
 			.easyTooltip({
 				content: `<span>${respuesta[especie].nombreCientifico}<span/>`
 			});
-		}
-		//Mostramos el tooltip en toda la barra para que sea más comodo verlo
-		/*var texto = $(`.especies`).children('.texto')
-		texto.easyTooltip({
-			content: `${texto.attr('title')}`
-		});*/
-		//esta funcion muestra el subarbol si no está visible o lo oculta si lo está
-		$(`.btn.especies`).click(function (){
+		
+		$(`.btn#${respuesta[especie].idEspecie}`).click(function (){
 		if($(this).hasClass("visible")){
 			$(this).removeClass("visible");
 			$(this).html("visibility");
@@ -43,8 +37,8 @@ function generarEspecies(lista,ide){
 			console.log();
 			generarPlagas(divPadre,id);				
 		}
-	})
-		
+		})
+		}
 	})
 		
 }

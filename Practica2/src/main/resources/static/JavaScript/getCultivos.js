@@ -21,9 +21,9 @@ $.getJSON(url_cultivos,
 				).append(
 					$(`<span class="material-icons col-2 btn btn-light cultivos">`).attr('id', `${respuesta[cultivo].idcultivo}`).html("visibility")
 				)))
-		} 
+		
 		//esta funcion muestra el subarbol si no está visible o lo oculta si lo está
-		$(`.btn.cultivos`).click(function (){
+		$(`.btn#${respuesta[cultivo].idcultivo}`).click(function (){
 			if($(this).hasClass("visible")){
 				$(this).removeClass("visible");
 				$(this).html("visibility");
@@ -38,7 +38,7 @@ $.getJSON(url_cultivos,
 				generarEspecies(divPadre,id);	
 			}
 		})
-		
+		} 
 		
   });
 });
