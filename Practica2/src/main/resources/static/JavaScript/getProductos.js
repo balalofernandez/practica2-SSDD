@@ -4,7 +4,7 @@ function generarProductos(lista,idp){
 			nestedList = $('<ul class="productos list-group"/>').insertAfter(lista)
 			for (prod in respuesta){
 				nestedList.append($('<li class="list-group-item">').append(
-					$(`<div class="row ${prod} "/>`).append(
+					$(`<div class="row ${respuesta[prod].idProductoFitosanitario}_${idp} "/>`).append(
 						$('<span class="productos col">')
 							.html(`${respuesta[prod].nombre}, <a href="${respuesta[prod].uRL}">${respuesta[prod].uRL}<a/>`)
 					)))

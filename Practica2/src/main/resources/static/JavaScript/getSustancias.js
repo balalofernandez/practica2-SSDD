@@ -10,15 +10,15 @@ function generarSustanciasActivas(lista,ids){
 			nestedList = $('<ul class="sustancias list-group"/>').insertAfter(lista)
 			for (sustancia in respuesta){
 				nestedList.append($('<li class="list-group-item">').append(
-					$(`<div class="row ${sustancia} "/>`).append(
+					$(`<div class="row ${respuesta[sustancia].idSustanciaActiva}_${ids} "/>`).append(
 						$('<span class="sustancias col-10">')
 							.html(`${respuesta[sustancia].nombre}`)
 					).append(
-						$(`<span class="material-icons col-2 btn btn-light sustancias">`).attr('id', `${respuesta[sustancia].idSustanciaActiva}`).html("visibility")
+						$(`<span class="material-icons col-2 btn btn-light ${respuesta[sustancia].idSustanciaActiva}_${ids}">`).attr('id', `${respuesta[sustancia].idSustanciaActiva}`).html("visibility")
 				)))
 			
 			//esta funcion muestra el subarbol si no está visible o lo oculta si lo está
-			$(`.btn#${respuesta[sustancia].idSustanciaActiva}`).click(function (){
+			$(`.btn.${respuesta[sustancia].idSustanciaActiva}_${ids}`).click(function (){
 			if($(this).hasClass("visible")){
 				try{
 				$(this).removeClass("visible");

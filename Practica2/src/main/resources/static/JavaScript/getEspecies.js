@@ -10,19 +10,21 @@ function generarEspecies(lista,ide){
 		nestedList = $('<ul class="especies list-group"/>').insertAfter(lista)
 		for (especie in respuesta){
 			nestedList.append($('<li class="list-group-item">').append(
-				$(`<div class="row  ${respuesta[especie].idEspecie}"/>`).append(
+				//para que la clase sea única la vamos a identificar con el id de esta especie en concreto
+				//y además el cultivo predecesor
+				$(`<div class="row  ${respuesta[especie].idEspecie}_${ide}"/>`).append(
 					$('<span class="especies col-10">')
 						.html(`<span class="texto"> ${respuesta[especie].nombreVulgar}<span/>
 						<a href="${respuesta[especie].uRL}">${respuesta[especie].uRL}<a/>`)
 				).append(
-					$(`<span class="material-icons col-2 btn btn-light especies">`).attr('id', `${respuesta[especie].idEspecie}`).html("visibility")
+					$(`<span class="material-icons col-2 btn btn-light ${respuesta[especie].idEspecie}_${ide}">`).attr('id', `${respuesta[especie].idEspecie}`).html("visibility")
 			)))
-			$(`.${respuesta[especie].idEspecie}`).children('.especies').children('.texto')
+			$(`.${respuesta[especie].idEspecie}_${ide}`).children('.especies').children('.texto')
 			.easyTooltip({
 				content: `<span>${respuesta[especie].nombreCientifico}<span/>`
 			});
 		
-		$(`.btn#${respuesta[especie].idEspecie}`).click(function (){
+		$(`.btn.${respuesta[especie].idEspecie}_${ide}`).click(function (){
 		if($(this).hasClass("visible")){
 			$(this).removeClass("visible");
 			$(this).html("visibility");
@@ -34,7 +36,7 @@ function generarEspecies(lista,ide){
 			$(this).html("visibility_off");
 			divPadre =$(this).parent();
 			id = $(this).attr('id');
-			console.log();
+			console.log(id);
 			generarPlagas(divPadre,id);				
 		}
 		})

@@ -10,20 +10,20 @@ function generarPlagas(lista,idpl){
 			nestedList = $('<ul class="plagas list-group"/>').insertAfter(lista)
 			for (plaga in respuesta){
 				nestedList.append($('<li class="list-group-item">').append(
-					$(`<div class="row ${respuesta[plaga].idPlaga} "/>`).append(
+					$(`<div class="row ${respuesta[plaga].idPlaga}_${idpl}"/>`).append(
 						$('<span class="plagas col-10">')
 							.html(`<span class="texto"> ${respuesta[plaga].nombreVulgar}<span/>
 							 <a href="${respuesta[plaga].uRL}">${respuesta[plaga].uRL}<a/>`)
 					).append(
-						$(`<span class="material-icons col-2 btn btn-light plagas">`).attr('id', `${respuesta[plaga].idPlaga}`).html("visibility")
+						$(`<span class="material-icons col-2 btn btn-light ${respuesta[plaga].idPlaga}_${idpl}">`).attr('id', `${respuesta[plaga].idPlaga}`).html("visibility")
 				)))
-				$(`.${respuesta[plaga].idPlaga}`).children('.plagas').children('.texto')
+				$(`.${respuesta[plaga].idPlaga}_${idpl}`).children('.plagas').children('.texto')
 				.easyTooltip({
 					content: `<span>${respuesta[plaga].nombreCientifico}<span/>`
 				});
 			
 			//esta funcion muestra el subarbol si no está visible o lo oculta si lo está
-			$(`.btn#${respuesta[plaga].idPlaga}`).click(function (){
+			$(`.btn.${respuesta[plaga].idPlaga}_${idpl}`).click(function (){
 			if($(this).hasClass("visible")){
 				$(this).removeClass("visible");
 				$(this).html("visibility");
