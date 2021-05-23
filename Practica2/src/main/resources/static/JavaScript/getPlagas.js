@@ -23,7 +23,7 @@ function generarPlagas(lista,idpl){
 				});
 			
 			//esta funcion muestra el subarbol si no está visible o lo oculta si lo está
-			$(`.btn.${respuesta[plaga].idPlaga}_${idpl}`).click(function (){
+			$(`.btn.${respuesta[plaga].idPlaga}_${idpl}`).unbind("click").click(function (){
 			if($(this).hasClass("visible")){
 				$(this).removeClass("visible");
 				$(this).html("visibility");

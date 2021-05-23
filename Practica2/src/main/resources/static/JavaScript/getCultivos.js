@@ -23,7 +23,8 @@ $.getJSON(url_cultivos,
 				)))
 		
 		//esta funcion muestra el subarbol si no está visible o lo oculta si lo está
-		$(`.btn#${respuesta[cultivo].idcultivo}`).click(function (){
+		//El unbind es para que libere los clicks que tiene enlazados
+		$(`.btn#${respuesta[cultivo].idcultivo}`).unbind("click").click(function (){
 			if($(this).hasClass("visible")){
 				$(this).removeClass("visible");
 				$(this).html("visibility");

@@ -24,7 +24,7 @@ function generarEspecies(lista,ide){
 				content: `<span>${respuesta[especie].nombreCientifico}<span/>`
 			});
 		
-		$(`.btn.${respuesta[especie].idEspecie}_${ide}`).click(function (){
+		$(`.btn.${respuesta[especie].idEspecie}_${ide}`).unbind("click").click(function (){
 		if($(this).hasClass("visible")){
 			$(this).removeClass("visible");
 			$(this).html("visibility");
@@ -36,7 +36,6 @@ function generarEspecies(lista,ide){
 			$(this).html("visibility_off");
 			divPadre =$(this).parent();
 			id = $(this).attr('id');
-			console.log(id);
 			generarPlagas(divPadre,id);				
 		}
 		})

@@ -18,13 +18,13 @@ function generarSustanciasActivas(lista,ids){
 				)))
 			
 			//esta funcion muestra el subarbol si no está visible o lo oculta si lo está
-			$(`.btn.${respuesta[sustancia].idSustanciaActiva}_${ids}`).click(function (){
-			if($(this).hasClass("visible")){
+			$(`.btn.${respuesta[sustancia].idSustanciaActiva}_${ids}`).unbind("click").click(function (){
+			if($(this).text() != 'visibility'){
 				try{
-				$(this).removeClass("visible");
-				$(this).html("visibility");
-				divUL =$(this).parent().parent().children('ul');	
-				eliminarArbol(divUL)
+					//$(this).removeClass("visible");
+					$(this).html("visibility");
+					divUL =$(this).parent().parent().children('ul');	
+					eliminarArbol(divUL)
 				}
 				catch(err){
 					console.error(err)
@@ -32,11 +32,11 @@ function generarSustanciasActivas(lista,ids){
 			}
 			else{
 				try{
-					$(this).addClass("visible");
-				$(this).html("visibility_off");
-				divPadre =$(this).parent();
-				id = $(this).attr('id');
-				generarProductos(divPadre,id);		
+					//$(this).addClass("visible");
+					$(this).html("visibility_off");
+					divPadre =$(this).parent();
+					id = $(this).attr('id');
+					generarProductos(divPadre,id);		
 				}
 				catch(err){
 					console.error(err)
